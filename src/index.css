@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Cairo", system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Cairo", system-ui, sans-serif;
+  --font-arabic: "Cairo", sans-serif;
+  --color-royal-purple: #7C3AED;
+  --color-royal-purple-dark: #5B21B6;
+  --color-royal-purple-light: #A78BFA;
+  --color-obsidian-black: #050506;
+  --color-obsidian-dark: #0A0A0C;
+  --color-obsidian-light: #16161B;
+}
+
+/* Custom gorgeous animations & glow colors */
+@layer base {
+  body {
+    background-color: var(--color-obsidian-black);
+    color: #F1F5F9;
+    font-family: var(--font-sans);
+  }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.5; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(0.95); opacity: 0.5; }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes border-glow-vertical {
+  0% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 50% 100%;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.05), inset 0 0 4px rgba(124, 58, 237, 0.02);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(124, 58, 237, 0.15), inset 0 0 6px rgba(124, 58, 237, 0.06);
+  }
+}
+
+.animated-glow-border {
+  position: relative;
+  border: 1.5px solid transparent !important;
+  background: linear-gradient(var(--color-obsidian-dark), var(--color-obsidian-dark)) padding-box,
+              linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(167, 139, 250, 0.28) 50%, rgba(124, 58, 237, 0.1) 100%) border-box !important;
+  background-size: auto 200% !important;
+  animation: border-glow-vertical 5s ease-in-out infinite alternate, glow-pulse 6s ease-in-out infinite !important;
+}
+
+.animated-glow-border-chat {
+  position: relative;
+  border: 1.5px solid transparent !important;
+  background: linear-gradient(#100821, #0c051a) padding-box,
+              linear-gradient(135deg, rgba(124, 58, 237, 0.06) 0%, rgba(167, 139, 250, 0.22) 50%, rgba(124, 58, 237, 0.06) 100%) border-box !important;
+  background-size: auto 200% !important;
+  animation: border-glow-vertical 5s ease-in-out infinite alternate, glow-pulse 6s ease-in-out infinite !important;
+}
+
+
+
