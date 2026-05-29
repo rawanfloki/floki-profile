@@ -1,0 +1,6 @@
+{
+  "name": "Floki Profile",
+  "description": "A sleek, professional personal profile and landing page for Floki, featuring social links including Twitter, Discord, YouTube, and TikTok with a premium royal purple and deep black theme.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
